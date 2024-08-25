@@ -13,6 +13,8 @@ const app = express();
 const port = process.env.PORT || 4000;
 
 mongoose.connect(process.env.MONGO_URL,{
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
 })
     .then(() =>console.log('Connected to MongoDB'))
     .catch((err) => console.log('Error connecting to MongoDB:', err));
